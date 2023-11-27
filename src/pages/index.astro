@@ -1,94 +1,93 @@
 ---
-import Root from "@/layouts/Root.astro";
 import Headless from "@/layouts/Headless.astro";
 
 import { cn } from "@/lib/utils.js";
 ---
 
-<Root title="PeerTeachTech">
-  <Headless>
+<Headless>
+  <main>
     <section
-      class="flex h-screen items-center justify-center bg-gradient-to-b from-blue-100 via-purple-50 to-transparent"
+      class="bg-gradient-to-b from-blue-100 via-purple-50 to-transparent"
     >
-      <div class="container flex flex-col items-center justify-center">
-        <h1 class={cn("typo-h typo-h1 text-center", "md:text-7xl text-4xl")}>
-          PeerTeachTech
-        </h1>
-        <p class="typo-p mt-4 max-w-lg text-center font-medium">
-          Learn programming and web development with us. Read more about
-          PeerTeachTech below. You can also explore our learning resources and
-          projects.
-        </p>
-      </div>
       <div
-        class="absolute inset-x-0 bottom-16 text-center text-sm font-medium md:text-base"
+        class="container flex w-full flex-col items-center justify-center py-64"
       >
-        A <span class="typo-gradient-1 font-semibold">CHADWORKS</span> project.
-      </div>
-    </section>
-
-    <section class="container max-w-2xl py-64 pb-32">
-      <div>
-        <h2 class={cn("typo-h typo-h2 text-center", "text-2xl md:text-4xl")}>
-          What is PeerTeachTech
-        </h2>
-        <p
-          class={cn("typo-p text-lg text-neutral-600 text-center md:text-left")}
-        >
-          PeerTeachTech is an initiative, a <span
-            class="typo-gradient-1 font-semibold">CHADWORKS</span
-          > project to help you learn programming and web development through a
-          series of workshops, projects, and lessons.
-        </p>
-        <p
-          class={cn("typo-p text-lg text-neutral-600 text-center md:text-left")}
-        >
-          With the help of available resources on the internet, our goal is to
-          guide you in your journey to becoming a better programmer. We curate a
-          list of resources and projects that you can use to learn and practice
-          your skills. As well as write articles and tutorials to help you
-          understand the concepts and ideas behind programming and web
-          development topics.
+        <div>
+          <h1 class={cn("typo-h typo-h1", "text-center")}>PeerTeachTech</h1>
+          <p class="typo-p mt-4 max-w-lg text-center">
+            Learn programming and web development with us. Explore learning
+            resources and projects as well as read case studies and articles.
+          </p>
+        </div>
+        <div class="py-12">
+          <a href="/resources">
+            <button
+              class="hover group rounded-md border border-gray-400 bg-white shadow hover:bg-gray-50"
+            >
+              <div class="px-4 py-2">
+                <span
+                  class="group-hover:typo-gradient-2 font-semibold text-neutral-800"
+                  >Get Started</span
+                >
+              </div>
+            </button>
+          </a>
+        </div>
+        <p class={cn("typo-p", "!mt-0")}>
+          A <span class="typo-gradient-2 font-semibold">CHADWORKS</span>
+           project.
         </p>
       </div>
     </section>
 
-    <section class="container max-w-2xl py-32">
-      <div>
-        <h2 class="typo-h typo-h2 text-center">Our Topics</h2>
-        <ul class="my-6 ml-6 list-disc text-lg text-neutral-600 [&>li]:mt-2">
-          <li>Getting started with Web Development.</li>
-          <li>What is npm and what are the benefits from using it.</li>
-          <li>
-            Your first tech stack, RocketWind. (<a
-              href="https://astro.build"
-              class="typo-link"
+    <section>
+      <div
+        class="container flex max-w-4xl items-start justify-between gap-8 py-16"
+      >
+        <h2 class="typo-h typo-h2 w-1/2 text-right">What is PeerTeachTech</h2>
+        <div class="w-1/2">
+          <p class="typo-p">
+            PeerTeachTech is a <span class="typo-gradient-1 font-semibold"
+              >CHADWORKS</span
+            > project to help you learn programming and web development through
+            a series of workshops and lessons. We curate a list of resources and
+            projects that you can use to learn and practice your skills.
+          </p>
+          <p class="typo-p">
+            Our goal is to help you learn programming and web development, make
+            topics easier to understand, and help you build your first project.
+          </p>
+          <p class="typo-p">
+            There are a lot of resources available on the internet to teach you
+            everything you need to know. What we'll do is curate a list of the
+            best resources and projects. As well explain further the concepts
+            and ideas behind programming and web development topics.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div
+        class="container flex max-w-4xl items-start justify-between gap-8 py-16"
+      >
+        <h2 class="typo-h typo-h2 w-1/2 text-right">Need more info?</h2>
+        <div class="w-1/2">
+          <p class="typo-p">
+            If you have any questions, comments, or concerns, please feel free
+            to reach out at
+            <a
+              href="mailto:contact@chadfernandez.me"
               target="_blank"
-              rel="noopenner noreferrer">Astro JS</a
-            > + <a
-              href="https://tailwindcss.com"
-              class="typo-link"
-              target="_blank"
-              rel="noopenner noreferrer">Tailwind CSS</a
-            >)
-          </li>
-          <li>Installing and setting up your project repository.</li>
-          <li>Code review and building your project.</li>
-          <li>A lot of tips and tricks in coding...</li>
-        </ul>
+              rel="noopener noreferrer"
+              class="typo-link font-medium">contact@chadfernandez.me</a
+            >
+          </p>
+          <p class="typo-p">
+            I&apos;m also open to any suggestions or feedback.
+          </p>
+        </div>
       </div>
     </section>
-
-    <section class="container max-w-2xl py-32">
-      <div>
-        <h2 class="typo-h typo-h2 text-center">Mark Your Calendars</h2>
-        <p class={cn("typo-p text-xl text-neutral-600 font-medium")}>
-          No upcoming PeerTeachTech events yet. But you can check out our <a
-            href="/resources"
-            class="typo-link font-semibold">learning resources</a
-          > to get started.
-        </p>
-      </div>
-    </section>
-  </Headless>
-</Root>
+  </main>
+</Headless>
