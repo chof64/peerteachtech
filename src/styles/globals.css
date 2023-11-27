@@ -88,7 +88,7 @@
     @apply typo-gradient-2 pb-2 text-2xl font-semibold first:mt-0 md:text-3xl;
   }
 
-  typo-h3 {
+  .typo-h3 {
     @apply typo-gradient-2 text-xl font-semibold md:text-2xl;
   }
 
