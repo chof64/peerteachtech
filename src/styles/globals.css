@@ -81,15 +81,19 @@
   }
 
   .typo-h1 {
-    @apply typo-gradient-1 text-4xl font-extrabold lg:text-5xl;
+    @apply typo-gradient-1 text-3xl font-extrabold md:text-4xl;
   }
 
   .typo-h2 {
-    @apply typo-gradient-2 pb-2 text-2xl font-semibold first:mt-0 md:text-4xl;
+    @apply typo-gradient-2 pb-2 text-2xl font-semibold first:mt-0 md:text-3xl;
+  }
+
+  typo-h3 {
+    @apply typo-gradient-2 text-xl font-semibold md:text-2xl;
   }
 
   .typo-p {
-    @apply leading-7 [&:not(:first-child)]:mt-6;
+    @apply leading-7 text-neutral-600 [&:not(:first-child)]:mt-6;
   }
 
   .typo-link {
@@ -97,16 +101,34 @@
   }
 
   .typo-gradient-1 {
-    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+    @apply gradient-1 bg-clip-text text-transparent;
   }
 
   .typo-gradient-2 {
-    @apply bg-gradient-to-br from-purple-500 via-red-500 to-orange-500 bg-clip-text text-transparent;
+    @apply gradient-2 bg-clip-text text-transparent;
+  }
+}
+
+@layer components {
+  .gradient-1 {
+    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500;
+  }
+
+  .gradient-1-light {
+    @apply bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300;
+  }
+
+  .gradient-2 {
+    @apply bg-gradient-to-br from-purple-500 via-red-500 to-orange-500;
+  }
+
+  .gradient-2-light {
+    @apply bg-gradient-to-br from-purple-300 via-red-300 to-orange-300;
   }
 }
 
 @layer components {
   .trans-delay-1 {
-    @apply transition delay-75 duration-100 ease-in-out;
+    @apply transition-all delay-75 duration-100 ease-in-out;
   }
 }
