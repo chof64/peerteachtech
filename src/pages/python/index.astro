@@ -1,0 +1,109 @@
+---
+import { details } from "@/content/python/details.ts"
+import Layout from "@/layouts/Default.astro"
+import { getCollection, getEntry } from "astro:content"
+
+import { cn } from "@/lib/utils"
+
+const content = await getCollection("python")
+
+// loop over all details, add content that matches the chapter
+details.forEach((detail) => {
+  const lessons = content.filter((entry) => entry.data.chapter === detail.chapter)
+  detail.content = lessons.sort((a, b) => a.data.lesson - b.data.lesson)
+})
+
+const setA = details.filter((detail, i) => i % 2 === 0)
+const setB = details.filter((detail, i) => i % 2 === 1)
+---
+
+<Layout>
+  <main>
+    <section>
+      <div class="container max-w-4xl py-8 pt-32">
+        <h1 class="typo-h typo-h1 text-center">Learn Python</h1>
+      </div>
+    </section>
+
+    <section>
+      <div class="container max-w-4xl py-8 pt-16">
+        <div>
+          <div class="flex flex-col gap-3 md:hidden">
+            {
+              setA.map((detail) => (
+                <div class="rounded-xl border border-neutral-200/60 bg-gray-100/40 p-4">
+                  <div>
+                    <div class="text-xs font-semibold uppercase text-neutral-400">
+                      Chapter {detail.chapter}
+                    </div>
+                    <h2 class={cn("typo-h typo-h2", "text-xl md:text-xl")}>{detail.title}</h2>
+                    <p class="typo-muted">{detail.description}</p>
+                  </div>
+                  <div class="flex flex-col gap-2 pt-6">
+                    {detail.content.map((entry: any) => (
+                      <a href={`/python/${entry.slug}`}>
+                        <div class="rounded-lg border border-gray-400/60 bg-gray-200/60 px-2 py-1">
+                          <h3 class="typo-h font-medium">{entry.data.title}</h3>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+        <div class="hidden grid-cols-2 gap-3 md:grid">
+          <div class="flex flex-col gap-3">
+            {
+              setA.map((detail) => (
+                <div class="rounded-xl border border-neutral-200/60 bg-gray-100/40 p-4">
+                  <div>
+                    <div class="text-xs font-semibold uppercase text-neutral-400">
+                      Chapter {detail.chapter}
+                    </div>
+                    <h2 class={cn("typo-h typo-h2", "text-xl md:text-xl")}>{detail.title}</h2>
+                    <p class="typo-muted">{detail.description}</p>
+                  </div>
+                  <div class="flex flex-col gap-2 pt-6">
+                    {detail.content.map((entry: any) => (
+                      <a href={`/python/${entry.slug}`}>
+                        <div class="rounded-lg border border-gray-400/60 bg-gray-200/60 px-2 py-1">
+                          <h3 class="typo-h font-medium">{entry.data.title}</h3>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+          <div class="flex flex-col gap-3">
+            {
+              setB.map((detail) => (
+                <div class="rounded-xl border border-neutral-200/60 bg-gray-100/40 p-4">
+                  <div>
+                    <div class="text-xs font-semibold uppercase text-neutral-400">
+                      Chapter {detail.chapter}
+                    </div>
+                    <h2 class={cn("typo-h typo-h2", "text-xl md:text-xl")}>{detail.title}</h2>
+                    <p class="typo-muted">{detail.description}</p>
+                  </div>
+                  <div class="flex flex-col gap-2 pt-6">
+                    {detail.content.map((entry: any) => (
+                      <a href={`/python/${entry.slug}`}>
+                        <div class="rounded-lg border border-gray-400/60 bg-gray-200/60 px-2 py-1">
+                          <h3 class="typo-h font-medium">{entry.data.title}</h3>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

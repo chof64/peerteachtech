@@ -1,0 +1,93 @@
+---
+import Layout from "@/layouts/Default.astro"
+import { getCollection, getEntry } from "astro:content"
+
+import { cn } from "@/lib/utils"
+import Links from "@/components/blocks/Links.astro"
+
+// ADD GETSTATICPATHS HERE FOR SSG
+
+const { slug }: any = Astro.params
+const post: any = await getEntry("python", slug)
+
+const prevPost = await getCollection("python", (colPost: any) => {
+  return colPost.data.chapter === post.data.chapter && colPost.data.lesson === post.data.lesson - 1
+})
+
+const nextPost = await getCollection("python", (colPost: any) => {
+  return colPost.data.chapter === post.data.chapter && colPost.data.lesson === post.data.lesson + 1
+})
+
+const { Content, headings, components } = await post.render()
+---
+
+<Layout>
+  <main>
+    <section>
+      <div class="container max-w-xl py-16 pt-16">
+        <div class="py-8 pb-16">
+          <a
+            href={`/python`}
+            class="hover:typo-gradient-2-500 trans-delay-1 bg-gradient-to-br from-neutral-400 to-neutral-400 bg-clip-text text-sm font-medium text-transparent"
+            >&lt;-- Back to Course Page</a
+          >
+        </div>
+        <p class="text-center text-xs font-semibold uppercase text-neutral-600">
+          Chapter {post.data.chapter}, Lesson {post.data.lesson}
+        </p>
+        <h1 class="typo-h typo-h1 text-center">{post.data.title}</h1>
+      </div>
+    </section>
+
+    <section>
+      <div class={cn("container prose max-w-xl")}>
+        <Content
+          components={{
+            ...components,
+            a: Links,
+          }}
+        />
+      </div>
+    </section>
+
+    <section>
+      <div class="container grid max-w-xl grid-cols-2 gap-1.5 py-16 pt-32">
+        <div>
+          <p class={cn("typo-muted", "text-neutral-400 font-medium mb-1.5")}>Previous Lesson</p>
+          {
+            prevPost[0] ? (
+              <a href={`/python/${prevPost[0].slug}`}>
+                <div class="rounded-lg border border-gray-200/60 bg-gray-100/40 px-2 py-2 text-sm font-medium text-neutral-500">
+                  &lt;-- {prevPost[0].data.title}
+                </div>
+              </a>
+            ) : (
+              <div class="rounded-lg border border-gray-100/60 bg-gray-50/40 px-2 py-2 text-sm font-medium text-neutral-300">
+                No previous lesson
+              </div>
+            )
+          }
+        </div>
+        <div>
+          <p class={cn("typo-muted", "text-neutral-400 font-medium mb-1.5 text-right")}>
+            Next Lesson
+          </p>
+
+          {
+            nextPost[0] ? (
+              <a href={`/python/${nextPost[0].slug}`}>
+                <div class="rounded-lg border border-gray-200/60 bg-gray-100/40 px-2 py-2 text-right text-sm font-medium text-neutral-500">
+                  {nextPost[0].data.title} --&gt;
+                </div>
+              </a>
+            ) : (
+              <div class="rounded-lg border border-gray-100/60 bg-gray-50/40 px-2 py-2 text-right text-sm font-medium text-neutral-300">
+                No next lesson
+              </div>
+            )
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
