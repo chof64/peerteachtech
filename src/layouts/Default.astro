@@ -1,12 +1,15 @@
 ---
-import Root from "./Root.astro";
-import Footer from "@/components/Footer.astro";
+import Footer from "@/components/Footer.astro"
+import Header from "@/components/Header.astro"
 
-const { title } = Astro.props;
+import Root from "./Root.astro"
+
+const { title } = Astro.props
 ---
 
 <Root title={title ? `${title} - PeerTeachTech` : "PeerTeachTech by CHADWORKS"}>
   <div class="min-h-screen">
+    <Header />
     <slot />
   </div>
   <Footer />

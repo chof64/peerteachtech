@@ -81,49 +81,100 @@
   }
 
   .typo-h1 {
-    @apply typo-gradient-1 text-3xl font-extrabold md:text-4xl;
+    @apply typo-gradient-1-500 text-3xl font-extrabold md:text-4xl;
   }
 
   .typo-h2 {
-    @apply typo-gradient-2 pb-2 text-2xl font-semibold first:mt-0 md:text-3xl;
+    @apply typo-gradient-2-500 pb-2 text-2xl font-semibold first:mt-0 md:text-3xl;
   }
 
   .typo-h3 {
-    @apply typo-gradient-2 text-xl font-semibold md:text-2xl;
+    @apply typo-gradient-2-500 text-xl font-semibold md:text-2xl;
   }
 
   .typo-p {
     @apply leading-7 text-neutral-600 [&:not(:first-child)]:mt-6;
   }
 
+  .typo-large {
+    @apply;
+  }
+
+  .typo-lead {
+    @apply;
+  }
+
+  .typo-small {
+    @apply;
+  }
+
+  .typo-muted {
+    @apply text-sm text-neutral-500;
+  }
+
   .typo-link {
-    @apply typo-gradient-2 trans-delay-1 hover:typo-gradient-1 underline decoration-blue-400/40 decoration-2 underline-offset-2 transition hover:decoration-orange-400/40;
+    @apply typo-gradient-2-500 trans-delay-1 hover:typo-gradient-1-500 underline decoration-blue-400/40 decoration-2 underline-offset-2 transition hover:decoration-orange-400/40;
   }
 
-  .typo-gradient-1 {
-    @apply gradient-1 bg-clip-text text-transparent;
+  /* TYPO GRADIENT */
+  .typo-gradient-1-500 {
+    @apply gradient-1-500 bg-clip-text text-transparent;
   }
 
-  .typo-gradient-2 {
-    @apply gradient-2 bg-clip-text text-transparent;
+  .typo-gradient-2-500 {
+    @apply gradient-2-500 bg-clip-text text-transparent;
   }
 }
 
 @layer components {
-  .gradient-1 {
-    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500;
+  /* GRADIENT 1 */
+  .gradient-1-50 {
+    @apply bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50;
   }
 
-  .gradient-1-light {
+  .gradient-1-100 {
+    @apply bg-gradient-to-br from-blue-100 via-purple-100 to-pink-100;
+  }
+
+  .gradient-1-200 {
+    @apply bg-gradient-to-br from-blue-200 via-purple-200 to-pink-200;
+  }
+
+  .gradient-1-300 {
     @apply bg-gradient-to-br from-blue-300 via-purple-300 to-pink-300;
   }
 
-  .gradient-2 {
-    @apply bg-gradient-to-br from-purple-500 via-red-500 to-orange-500;
+  .gradient-1-400 {
+    @apply bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400;
   }
 
-  .gradient-2-light {
+  .gradient-1-500 {
+    @apply bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500;
+  }
+
+  /* GRADIENT 2 */
+  .gradient-2-50 {
+    @apply bg-gradient-to-br from-purple-50 via-red-50 to-orange-50;
+  }
+
+  .gradient-2-100 {
+    @apply bg-gradient-to-br from-purple-100 via-red-100 to-orange-100;
+  }
+
+  .gradient-2-200 {
+    @apply bg-gradient-to-br from-purple-200 via-red-200 to-orange-200;
+  }
+
+  .gradient-2-300 {
     @apply bg-gradient-to-br from-purple-300 via-red-300 to-orange-300;
+  }
+
+  .gradient-2-400 {
+    @apply bg-gradient-to-br from-purple-400 via-red-400 to-orange-400;
+  }
+
+  .gradient-2-500 {
+    @apply bg-gradient-to-br from-purple-500 via-red-500 to-orange-500;
   }
 }
 

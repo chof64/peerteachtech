@@ -1,81 +1,86 @@
 ---
-import Headless from "@/layouts/Headless.astro";
+import Layout from "@/layouts/Default.astro"
 
-import { cn } from "@/lib/utils.js";
+import { cn } from "@/lib/utils.js"
 ---
 
-<Headless>
+<Layout>
   <main>
-    <section
-      class="bg-gradient-to-b from-blue-100 via-purple-50 to-transparent"
-    >
-      <div
-        class="container flex w-full flex-col items-center justify-center py-64"
-      >
+    <section class="bg-gradient-to-b from-transparent via-purple-100 to-transparent">
+      <div class="container flex w-full max-w-4xl flex-col items-center justify-center py-64">
         <div>
           <h1 class={cn("typo-h typo-h1", "text-center")}>PeerTeachTech</h1>
-          <p class="typo-p mt-4 max-w-lg text-center">
-            Learn programming and web development with us. Explore learning
-            resources and projects as well as read case studies and articles.
+          <p class={cn("typo-p", "max-w-lg text-center")}>
+            Learn programming and web development with us. Explore learning resources and projects
+            as well as read case studies and articles.
           </p>
         </div>
         <div class="py-12">
-          <a href="/resources">
+          <a href="/#learn">
             <button
               class="hover group rounded-md border border-gray-400 bg-white shadow hover:bg-gray-50"
             >
               <div class="px-4 py-2">
-                <span
-                  class="group-hover:typo-gradient-2 font-semibold text-neutral-800"
-                  >Get Started</span
+                <span class="group-hover:typo-gradient-2-500 font-semibold text-neutral-800"
+                  >Get Started Learning</span
                 >
               </div>
             </button>
           </a>
         </div>
         <p class={cn("typo-p", "!mt-0")}>
-          A <span class="typo-gradient-2 font-bold">CHADWORKS</span>
+          A <span class="typo-gradient-2-500 font-bold">CHADWORKS</span>
            project.
         </p>
       </div>
     </section>
 
     <section>
-      <div
-        class="container flex max-w-4xl items-start justify-between gap-8 py-16"
-      >
+      <div class="container flex max-w-4xl items-start justify-between gap-8 py-16">
+        <h2 id="learn" class="typo-h typo-h2 w-1/2 text-right">Learning Resources</h2>
+        <div class="w-1/2">
+          <a href="/python">
+            <div class="gradient-1-50 rounded-lg border border-blue-500 p-4">
+              <h3 class="typo-h typo-h3">Python</h3>
+              <p class="typo-p">
+                Learn Python with our curated list of resources and projects. We&apos;ll help you
+                learn the basics of Python with lots of examples and practice problems.
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container flex max-w-4xl items-start justify-between gap-8 py-16">
         <h2 class="typo-h typo-h2 w-1/2 text-right">What is PeerTeachTech</h2>
         <div class="w-1/2">
           <p class="typo-p">
-            PeerTeachTech is a <span class="typo-gradient-1 font-bold"
-              >CHADWORKS</span
-            > project to help you learn programming and web development through
-            a series of workshops and lessons. We curate a list of resources and
-            projects that you can use to learn and practice your skills.
+            PeerTeachTech is a <span class="typo-gradient-1-500 font-bold">CHADWORKS</span> project
+            to help you learn programming and web development through a series of workshops and
+            lessons. We curate a list of resources and projects that you can use to learn and
+            practice your skills.
           </p>
           <p class="typo-p">
-            Our goal is to help you learn programming and web development, make
-            topics easier to understand, and help you build your first project.
+            Our goal is to help you learn programming and web development, make topics easier to
+            understand, and help you build your first project.
           </p>
           <p class="typo-p">
-            There are a lot of resources available on the internet to teach you
-            everything you need to know. What we'll do is curate a list of the
-            best resources and projects. As well explain further the concepts
-            and ideas behind programming and web development topics.
+            There are a lot of resources available on the internet to teach you everything you need
+            to know. What we'll do is curate a list of the best resources and projects. As well
+            explain further the concepts and ideas behind programming and web development topics.
           </p>
         </div>
       </div>
     </section>
 
     <section>
-      <div
-        class="container flex max-w-4xl items-start justify-between gap-8 py-16"
-      >
+      <div class="container flex max-w-4xl items-start justify-between gap-8 py-16">
         <h2 class="typo-h typo-h2 w-1/2 text-right">Need more info?</h2>
         <div class="w-1/2">
           <p class="typo-p">
-            If you have any questions, comments, or concerns, please feel free
-            to reach out at
+            If you have any questions, comments, or concerns, please feel free to reach out at
             <a
               href="mailto:contact@chadfernandez.me"
               target="_blank"
@@ -83,11 +88,9 @@ import { cn } from "@/lib/utils.js";
               class="typo-link font-bold">contact@chadfernandez.me</a
             >
           </p>
-          <p class="typo-p">
-            I&apos;m also open to any suggestions or feedback.
-          </p>
+          <p class="typo-p">I&apos;m also open to any suggestions or feedback.</p>
         </div>
       </div>
     </section>
   </main>
-</Headless>
+</Layout>
